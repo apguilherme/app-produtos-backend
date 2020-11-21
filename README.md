@@ -1,1 +1,1 @@
-NodeJS API developed to be used by an React Native application, using JWT authentication and a MongoDB cloud database. 
+NodeJS API developed to be used by a React Native application, using JWT authentication and a MongoDB cloud database. The goal is to add products and make orders. 
