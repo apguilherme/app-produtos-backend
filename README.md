@@ -1,0 +1,1 @@
+NodeJS API developed to be used by an React Native application, using JWT authentication and a MongoDB cloud database. 
