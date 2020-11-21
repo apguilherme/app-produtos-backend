@@ -1,0 +1,6 @@
+/node_modules
+.env
+/routes/CategoriaFerramentaRoute.js
+/routes/CategoriaServicoRoute.js
+/model/CategoriaFerramenta.js
+/model/CategoriaServico.js
