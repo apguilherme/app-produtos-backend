@@ -46,6 +46,7 @@ app.use(function(req, res, next){
 app.use(bodyParser.json())
 
 // rotas
+app.get('/', (req, res) => {return res.send({msg: 'OK'})})
 app.use('/auth', AuthRoute) 
 app.use('/categoriaproduto', verifyJWT, CategoriaProdutoRoute) 
 app.use('/user', verifyJWT, UserRoute) 
