@@ -1,4 +1,6 @@
-require('dotenv').config()
+if (!process.env.IS_PRODUCTION){
+    require('dotenv').config()
+}
 
 const jwt = require('jsonwebtoken');
 const express = require('express')
