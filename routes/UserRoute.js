@@ -15,33 +15,6 @@ router.get('/', async (req, res) => {
     }
 })
 
-router.post('/', [
-    check('nomeUser', 'informe nome').not().isEmpty(),
-    check('enderecoUser', 'informe endereço').not().isEmpty(),
-    check('email', 'informe email').not().isEmpty(),
-    check('password', 'informe uma senha').not().isEmpty(),
-    check('telefone', 'informe telefone').not().isEmpty(),
-    check('cpf', 'informe CPF').not().isEmpty(),
-], async (req, res) => {
-    const errors = validationResult(req) // valida check
-    if (!errors.isEmpty()) {
-        return res.status(400).json({ errors: errors.array() })
-    }
-    const dados = req.body
-    try {
-        let u = await User.findOne({ email: dados.email })
-        if (u) {
-            return res.status(400).json({ msg: 'email já utilizado' })
-        }
-        let user = new User(dados)
-        await user.save()
-        res.send(user)
-    }
-    catch (e) {
-        return res.status(500).json({ erro: `${e.message}` })
-    }
-})
-
 router.get('/:id', async (req, res) => { // busca pelo id
     await User.findById(req.params.id)
         .then(user => { res.send(user) })
