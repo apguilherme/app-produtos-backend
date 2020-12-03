@@ -2,7 +2,7 @@ const mongoose = require('mongoose')
 
 const ProductSchema = mongoose.Schema({
     nomeProduto: {type: String, required: true},
-    unidadeMedida: {type: String, default: 'm2', enum: ['m2', 'kg', 'm', 'cm', 'm3'], required: true},
+    unidadeMedida: {type: String, required: true},
     qualidade: {type: String, default: 'Novo', enum: ['Novo', 'Semi-novo', 'Com defeito', 'Quebrado', 'Velho'], required: true},
     descricao: {type: String, required: true},
     valorUnitario: {type: String, required: true},
